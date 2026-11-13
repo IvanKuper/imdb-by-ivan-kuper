@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="./imgs/logo.png" type="image/icon type" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>Ivan's movie Data Base</title>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <!-- NavBar -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-light">
+      <div class="container">
+        <div class="bumblelogo">
+          <a class="navbar-brand" href="index.html"
+            ><img class="logo" src="imgs/logo.png" alt="" />
+            <span class="logoSpan">I'mDB</span></a
+          >
+        </div>
+        <div class="collapse navbar-collapse" zid="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+          <form class="d-flex" role="profile">
+            <div class="profile">
+              <span class="text-white">
+                <a href="https://www.linkedin.com/in/ivankuper/" target="_blank"
+                  >Ivan Kuper
+                  <img
+                    class="profilePic"
+                    src="imgs/Profile.jpg"
+                    alt="Profile image" /></a
+              ></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+
+    <!-- Web Description text -->
+    <div class="container-fluid" id="_main">
+      <div class="big-tittle pt-5 text-center text-white">
+        <h2 class="_title_">Ivan's movie Data Base</h2>
+        <!-- <h2 class="_title_">
+          Search For <span class="bold">Movies</span>,<span class="bold">
+            Actors</span
+          >
+          And<span class="bold"></span> And<span class="bold"> Genre.</span>
+        </h2> -->
+      </div>
+      <div id="app" class="container mt-4">
+        <div class="section top">
+          <!-- Search Bar -->
+          <div class="input-group">
+            <input
+              id="search-field"
+              type="text"
+              class="input_control"
+              placeholder="Search for movie, genre, artist name..."
+              aria-label="Recipient's username"
+              aria-describedby="button-addon2"
+            />
+            <button
+              id="search-btn"
+              class="btn btn-warning"
+              type="button"
+              id="button-addon2"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+          <p id="message" class="text-center text-danger mt-2"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Section -->
+    <div class="container section center mt-5">
+      <div class="ribbonbox">
+        <div class="ribbon-2"></div>
+      </div>
+      <div class="top_text">
+        <h1 id="movieTitle"></h1>
+        <span id="_rating"></span>
+      </div>
+      <id class="main_image">
+        <img src="" id="mainPoster" />
+      </id>
+      <div class="row">
+        <div class="rightColumn col-lg-6 col-md-6">
+          <div class="body_text mt-3">
+            <i class="fa-solid fa-align-left"> </i>
+            <h5 class="boxtitle" style="display: inline">Description</h5>
+            <p id="desc"></p>
+            <i class="fa-solid fa-user-group"> </i>
+            <h5 class="boxtitle" style="display: inline">Actors</h5>
+            <p id="actors"></p>
+            <i class="fa-solid fa-user"></i>
+            <h5 class="boxtitle" style="display: inline">Directors</h5>
+            <p id="directors"></p>
+            <i class="fa-solid fa-award"> </i>
+            <h5 class="boxtitle" style="display: inline">Awards</h5>
+            <p id="awards"></p>
+          </div>
+        </div>
+        <div class="leftColumn col-lg-6 col-md-6">
+          <div class="body_text mt-3">
+            <i class="fa-solid fa-language"></i>
+            <h5 class="boxtitle" style="display: inline">Languages</h5>
+            <p id="language"></p>
+            <i class="fa-solid fa-calendar-days"> </i>
+            <h5 class="boxtitle" style="display: inline">Release Date</h5>
+            <p id="releasedate"></p>
+            <i class="fa-solid fa-clapperboard"> </i>
+            <h5 class="boxtitle" style="display: inline">Genre</h5>
+            <p id="genre"></p>
+            <i class="fa-regular fa-clock"></i>
+            <h5 class="boxtitle" style="display: inline">Movie Length</h5>
+            <p id="runtime"></p>
+            <i class="fa-solid fa-building-circle-arrow-right"></i>
+            <h5 class="boxtitle" style="display: inline">Distributed By</h5>
+            <p id="productionCompany"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Spinner -->
+    <div class="spinner-border" role="status" id="loader"></div>
+
+    <!-- Bottom Section -->
+    <div class="container mt-5" id="smilier-title">
+      <h2 class="text-center mt-1 moreLikeThis">
+        <span class="h2Span">Movies You Would Like</span>
+      </h2>
+    </div>
+    <div class="container section bottom"></div>
+    <!-- Footer -->
+    <footer class="footer mt-auto pt-3">
+      <div class="socials mb-3">
+        <a
+          class="link"
+          target="_blank"
+          href="https://www.facebook.com/ivankuper7"
+          ><i class="socials fab fa-facebook fa-2x px-1"></i
+        ></a>
+        <a
+          class="link"
+          target="_blank"
+          href="https://www.instagram.com/ivan_kuper/"
+          ><i class="socials fab fa-instagram fa-2x px-1"></i
+        ></a>
+        <a class="link" target="_blank" href="https://twitter.com/Ivan7Kuper"
+          ><i class="socials fab fa-twitter fa-2x px-1"></i
+        ></a>
+        <a
+          class="link"
+          target="_blank"
+          href="https://www.linkedin.com/in/ivan-kuper-b99581225/"
+          ><i class="fa-brands fa-linkedin fa-2x px-1"></i
+        ></a>
+      </div>
+      <p class="copyright">
+        Coded & Designed By:
+        <strong
+          ><a href="https://ivankuper.netlify.app/" target="_blank"
+            >Ivan Kuper</a
+          ></strong
+        >
+        © All rights reserved.
+      </p>
+    </footer>
+    <!-- End  Footer -->
+    <script src="./app.js"></script>
+  </body>
+</html>

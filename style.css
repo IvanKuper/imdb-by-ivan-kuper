@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda+One&display=swap");
+* {
+  font-family: "Merienda One", cursive;
+}
+body {
+  background-image: url(./imgs/top_bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.logo {
+  width: 4rem;
+}
+
+.profilePic {
+  width: 4rem;
+  border-radius: 100%;
+  margin-left: 1rem;
+}
+a {
+  color: yellow;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+}
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #212529;
+  color: white;
+  text-align: center;
+}
+
+._title_ {
+  filter: drop-shadow(1px 4px 2px black);
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+
+#message {
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+.center {
+  width: 100%;
+  font-size: large;
+  height: 50%;
+  border-radius: 5px;
+  background-color: white;
+  padding: 2rem;
+  filter: drop-shadow(0 1px 2px rgb(115, 115, 115));
+  animation: fadeInRight 0.5s ease-in-out;
+}
+
+.center img {
+  float: left;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.768);
+  border: none;
+  outline: none;
+  padding-left: 15px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+}
+
+.input_control {
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 52%;
+}
+
+.leftColumn {
+  border-left: 1px solid gray;
+  padding-left: 2.5rem;
+}
+
+li {
+  list-style: none;
+}
+
+.movieBox img {
+  width: 100%;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.movieBox:hover {
+  filter: brightness(50%);
+  cursor: pointer;
+}
+
+#mainPoster {
+  width: 20%;
+  margin: 1rem 1rem 0 0;
+  border-radius: 5px;
+  filter: drop-shadow(0 1px 2px rgb(115, 115, 115));
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1vmin;
+  animation: fadeInRight 0.5s ease-in-out;
+}
+
+.movieTitle {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.boxtitle {
+  color: rgb(121, 121, 121);
+}
+
+.smilierPoster {
+  filter: drop-shadow(1px 1px 3px rgb(125, 125, 125));
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  font-size: 1rem;
+  color: yellow;
+}
+
+.navbar-brand {
+  color: yellow;
+  filter: drop-shadow(0 1px 0 rgb(0, 0, 0));
+}
+
+.bold {
+  font-weight: 900;
+  color: yellow;
+}
+
+/* Ribbon */
+.ribbon-2 {
+  --f: 10px; /* control the folded part*/
+  --r: 15px; /* control the ribbon shape */
+  --t: 45px; /* the top offset */
+
+  position: absolute;
+  inset: var(--t) calc(-1 * var(--f)) auto auto;
+  padding: 0 10px var(--f) calc(10px + var(--r));
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--f)),
+    calc(100% - var(--f)) 100%,
+    calc(100% - var(--f)) calc(100% - var(--f)),
+    0 calc(100% - var(--f)),
+    var(--r) calc(50% - var(--f) / 2)
+  );
+  background: yellow;
+  box-shadow: 0 calc(-1 * var(--f)) 0 inset #0005;
+}
+
+.moreLikeThis {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgb(186, 186, 186);
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  border-radius: 100px;
+}
+
+.moreLikeThis,
+.h2Span {
+  background: yellow;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Breakpoints */
+@media only screen and (max-width: 768px) {
+  ._title_ {
+    font-size: 1.5rem;
+  }
+  .input_control {
+    width: 50%;
+  }
+  #_main {
+    background-attachment: fixed !important;
+    background-size: cover !important;
+  }
+  .input_control {
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 80%;
+  }
+  .leftColumn {
+    border-left: none;
+    padding-left: 0.7rem;
+  }
+  .center {
+    width: 90%;
+    font-size: small;
+  }
+  .bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #mainPoster {
+    display: flex;
+    justify-content: center;
+  }
+  #movieTitle,
+  #rating {
+    text-align: center;
+  }
+  #_rating {
+    display: flex;
+    justify-content: center;
+  }
+  .boxtitle {
+    font-size: 1rem;
+  }
+
+  .ribbon-2 {
+    --t: 10px; /* the top offset */
+  }
+}
