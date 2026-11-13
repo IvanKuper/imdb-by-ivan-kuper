@@ -20,10 +20,10 @@
       referrerpolicy="no-referrer"
     />
     <link rel="icon" href="./imgs/logo.png" type="image/icon type" />
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 
     <link rel="stylesheet" href="./style.css" />
-    <title>Ivan's movie Data Base</title>
+    <title>Ivan's TV Show Data Base</title>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <!-- NavBar -->
@@ -57,7 +57,7 @@
     <!-- Web Description text -->
     <div class="container-fluid" id="_main">
       <div class="big-tittle pt-5 text-center text-white">
-        <h2 class="_title_">Ivan's movie Data Base</h2>
+        <h2 class="_title_">Ivan's TV Show Data Base</h2>
         <!-- <h2 class="_title_">
           Search For <span class="bold">Movies</span>,<span class="bold">
             Actors</span
@@ -73,8 +73,8 @@
               id="search-field"
               type="text"
               class="input_control"
-              placeholder="Search for movie, genre, artist name..."
-              aria-label="Recipient's username"
+              placeholder="Search for a TV show, e.g. Friends..."
+              aria-label="TV show name"
               aria-describedby="button-addon2"
             />
             <button
@@ -113,10 +113,10 @@
             <h5 class="boxtitle" style="display: inline">Actors</h5>
             <p id="actors"></p>
             <i class="fa-solid fa-user"></i>
-            <h5 class="boxtitle" style="display: inline">Directors</h5>
+            <h5 class="boxtitle" style="display: inline">Created By</h5>
             <p id="directors"></p>
             <i class="fa-solid fa-award"> </i>
-            <h5 class="boxtitle" style="display: inline">Awards</h5>
+            <h5 class="boxtitle" style="display: inline">Status</h5>
             <p id="awards"></p>
           </div>
         </div>
@@ -126,16 +126,16 @@
             <h5 class="boxtitle" style="display: inline">Languages</h5>
             <p id="language"></p>
             <i class="fa-solid fa-calendar-days"> </i>
-            <h5 class="boxtitle" style="display: inline">Release Date</h5>
+            <h5 class="boxtitle" style="display: inline">Premiered</h5>
             <p id="releasedate"></p>
             <i class="fa-solid fa-clapperboard"> </i>
             <h5 class="boxtitle" style="display: inline">Genre</h5>
             <p id="genre"></p>
             <i class="fa-regular fa-clock"></i>
-            <h5 class="boxtitle" style="display: inline">Movie Length</h5>
+            <h5 class="boxtitle" style="display: inline">Episode Length</h5>
             <p id="runtime"></p>
             <i class="fa-solid fa-building-circle-arrow-right"></i>
-            <h5 class="boxtitle" style="display: inline">Distributed By</h5>
+            <h5 class="boxtitle" style="display: inline">Network</h5>
             <p id="productionCompany"></p>
           </div>
         </div>
@@ -147,7 +147,7 @@
     <!-- Bottom Section -->
     <div class="container mt-5" id="smilier-title">
       <h2 class="text-center mt-1 moreLikeThis">
-        <span class="h2Span">Movies You Would Like</span>
+        <span class="h2Span">More Shows Like This</span>
       </h2>
     </div>
     <div class="container section bottom"></div>
