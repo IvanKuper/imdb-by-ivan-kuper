@@ -77,7 +77,7 @@ const search = () => {
 };
 
 elements.searchBtn.addEventListener("click", search);
-elements.input.addEventListener("keypress", (e) => {
+elements.input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") search();
 });
 
@@ -121,9 +121,20 @@ const updateElements = (s, similars) => {
     img.src = m.image?.medium || NO_POSTER;
     img.alt = `${m.name} poster`;
     box.append(title, img);
-    box.addEventListener("click", () => {
+    // clickable card: reachable with the keyboard too
+    box.tabIndex = 0;
+    box.setAttribute("role", "button");
+    box.setAttribute("aria-label", `Show ${m.name}`);
+    const open = () => {
       loadData(null, m.id);
       window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+    box.addEventListener("click", open);
+    box.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        open();
+      }
     });
     elements.bottom.append(box);
   });
