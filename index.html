@@ -19,45 +19,44 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="icon" href="./imgs/logo.png" type="image/icon type" />
+    <link rel="icon" href="./imgs/logo.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap"
+      rel="stylesheet"
+    />
 
 
     <link rel="stylesheet" href="./style.css" />
+    <meta name="description" content="Search any TV show and see its poster, rating, genres and summary, with data from the free TVmaze API." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ivan's TV Show Data Base" />
+    <meta property="og:description" content="Search any TV show and see its poster, rating, genres and summary, with data from the free TVmaze API." />
+    <meta property="og:url" content="https://imdb-by-ivan-kuper.netlify.app/" />
+    <meta property="og:image" content="https://imdb-by-ivan-kuper.netlify.app/og.jpg" />
+    <meta name="theme-color" content="#212529" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>Ivan's TV Show Data Base</title>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <!-- NavBar -->
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-light">
+    <nav class="navbar navbar-dark bg-dark">
       <div class="container">
-        <div class="bumblelogo">
-          <a class="navbar-brand" href="index.html"
-            ><img class="logo" src="imgs/logo.png" alt="" />
-            <span class="logoSpan">I'mDB</span></a
-          >
-        </div>
-        <div class="collapse navbar-collapse" zid="navbarTogglerDemo03">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-          <form class="d-flex" role="profile">
-            <div class="profile">
-              <span class="text-white">
-                <a href="https://www.linkedin.com/in/ivankuper/" target="_blank"
-                  >Ivan Kuper
-                  <img
-                    class="profilePic"
-                    src="imgs/Profile.jpg"
-                    alt="Profile image" /></a
-              ></span>
-            </div>
-          </form>
-        </div>
+        <a class="navbar-brand" href="index.html"
+          ><img class="logo" src="imgs/logo.png" alt="" width="64" height="64" />
+          <span class="logoSpan">I'mDB</span></a
+        >
+        <a class="portfolio-link" href="https://ivankuper.github.io/"
+          ><span class="d-none d-sm-inline">Ivan Kuper &middot; </span>Portfolio
+          <img class="profilePic" src="imgs/Profile.jpg" alt="" width="40" height="40"
+        /></a>
       </div>
     </nav>
     <!-- End of Navbar -->
 
     <!-- Web Description text -->
-    <div class="container-fluid" id="_main">
+    <main class="container-fluid" id="_main">
       <div class="big-tittle pt-5 text-center text-white">
-        <h2 class="_title_">Ivan's TV Show Data Base</h2>
+        <h1 class="_title_">Ivan's TV Show Data Base</h1>
         <!-- <h2 class="_title_">
           Search For <span class="bold">Movies</span>,<span class="bold">
             Actors</span
@@ -75,21 +74,22 @@
               class="input_control"
               placeholder="Search for a TV show, e.g. Friends..."
               aria-label="TV show name"
-              aria-describedby="button-addon2"
+              aria-describedby="message"
+              autocomplete="off"
             />
             <button
               id="search-btn"
+              aria-label="Search"
               class="btn btn-warning"
               type="button"
-              id="button-addon2"
             >
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
-          <p id="message" class="text-center text-danger mt-2"></p>
+          <p id="message" class="text-center mt-2" role="status" aria-live="polite"></p>
         </div>
       </div>
-    </div>
+    </main>
 
     <!-- Center Section -->
     <div class="container section center mt-5">
@@ -100,9 +100,9 @@
         <h1 id="movieTitle"></h1>
         <span id="_rating"></span>
       </div>
-      <id class="main_image">
-        <img src="" id="mainPoster" />
-      </id>
+      <div class="main_image">
+        <img src="" id="mainPoster" alt="" />
+      </div>
       <div class="row">
         <div class="rightColumn col-lg-6 col-md-6">
           <div class="body_text mt-3">
@@ -142,7 +142,7 @@
       </div>
     </div>
     <!-- Spinner -->
-    <div class="spinner-border" role="status" id="loader"></div>
+    <div class="spinner-border" role="status" id="loader"><span class="visually-hidden">Loading...</span></div>
 
     <!-- Bottom Section -->
     <div class="container mt-5" id="smilier-title">
@@ -154,32 +154,17 @@
     <!-- Footer -->
     <footer class="footer mt-auto pt-3">
       <div class="socials mb-3">
-        <a
-          class="link"
-          target="_blank"
-          href="https://www.facebook.com/ivankuper7"
-          ><i class="socials fab fa-facebook fa-2x px-1"></i
+        <a aria-label="GitHub" class="link" target="_blank" rel="noopener" href="https://github.com/IvanKuper"
+          ><i class="fa-brands fa-github fa-2x px-1"></i
         ></a>
-        <a
-          class="link"
-          target="_blank"
-          href="https://www.instagram.com/ivan_kuper/"
-          ><i class="socials fab fa-instagram fa-2x px-1"></i
-        ></a>
-        <a class="link" target="_blank" href="https://twitter.com/Ivan7Kuper"
-          ><i class="socials fab fa-twitter fa-2x px-1"></i
-        ></a>
-        <a
-          class="link"
-          target="_blank"
-          href="https://www.linkedin.com/in/ivankuper/"
+        <a aria-label="LinkedIn" class="link" target="_blank" rel="noopener" href="https://www.linkedin.com/in/ivankuper/"
           ><i class="fa-brands fa-linkedin fa-2x px-1"></i
         ></a>
       </div>
       <p class="copyright">
         Coded & Designed By:
         <strong
-          ><a href="https://ivankuper.netlify.app/" target="_blank"
+          ><a href="https://ivankuper.github.io/" target="_blank"
             >Ivan Kuper</a
           ></strong
         >
